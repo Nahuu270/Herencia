@@ -1,0 +1,28 @@
+class Tienda:
+    def __init__(self, nombre):
+        self.nombre = nombre
+        self.ventas = 0
+
+    def mostrar_informacion(self):
+        print(f"Tienda: {self.nombre}")
+
+
+class TiendaRopa(Tienda):
+    def agregar_venta(self, monto):
+        self.ventas += monto
+
+
+class TiendaElectronica(Tienda):
+    def agregar_venta(self, monto):
+        self.ventas += monto
+
+
+if __name__ == "__main__":
+    t1 = TiendaRopa("Ropa")
+    t1.agregar_venta(5000)
+
+    t2 = TiendaElectronica("Tecnologia")
+    t2.agregar_venta(15000)
+
+    print("Ventas de Ropa:", t1.ventas)
+    print("Ventas de Tecnologia:", t2.ventas)
